@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Stopwatch</title>
+	<link rel="stylesheet" href="mdl/material-icons.css">
+	<link rel="stylesheet" href="mdl/material.min.css">
+	<link rel="stylesheet" href="stopwatch.css">
+</head>
+<body>
+	
+
+	<!-- Always shows a header, even in smaller screens. -->
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	  <header class="mdl-layout__header">
+	    <div class="mdl-layout__header-row">
+	      <!-- Title -->
+	      <span class="mdl-layout-title">Stopwatch</span>
+	      <!-- Add spacer, to align navigation to the right -->
+	      <div class="mdl-layout-spacer"></div>
+	      <!-- Navigation. We hide it in small screens. -->
+	     
+	    </div>
+	  </header>
+	  <div class="mdl-layout__drawer">
+	    <span class="mdl-layout-title">Title</span>
+	    <nav class="mdl-navigation">
+	      <a class="mdl-navigation__link" href="">Start/Stop</a>
+	      <a class="mdl-navigation__link" href="">Reset</a>
+	    </nav>
+	  </div>
+	  <main class="mdl-layout__content">
+	    <div class="page-content">
+	    	<div class="mdl-grid">
+	    		<div class="mdl-cell mdl-cell--4-col"></div>
+	    		<div class="mdl-cell mdl-cell--4-col" id="w-buttons">
+	    			<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+					  <span id="hour-count">00</span><span class="count-label">h</span>
+					</button>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+					  <span id="minute-count">00</span><span class="count-label">m</span>
+					</button>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+					  <span id="second-count">00</span><span class="count-label">s</span>
+					</button>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+					  <span id="millisecond-count">00</span>
+					</button>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--12-col">
+							<span id="stopwatch-mount-node"></span>
+						</div>
+					</div>
+	    		</div>
+
+	    		<div class="mdl-cell mdl-cell--4-col"></div>
+	    	</div>
+	    </div>
+	  </main>
+	</div>
+
+	<script src="mdl/material.min.js"></script>
+	<script src="build/react.min.js" ></script>
+	<script src="build/react-dom.min.js"></script>
+	<script src="build/browser.min.js"></script>
+	<script type="text/babel" src="stopwatch.js"></script>
+</body>
+</html>

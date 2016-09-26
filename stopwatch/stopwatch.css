@@ -1,0 +1,23 @@
+#w-buttons {
+	text-align: center;
+}
+#w-buttons > button{
+	text-transform: lowercase !important;
+}
+.count-label {
+    font-size: 15px;
+}
+.btn-control {
+	width: 85px !important;
+}
+.btn-control:nth-child(1) {
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.btn-control:nth-child(2) {
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.mdl-layout__content {
+	overflow: hidden !important;
+}
