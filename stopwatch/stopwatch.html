@@ -24,10 +24,14 @@
 	    </div>
 	  </header>
 	  <div class="mdl-layout__drawer">
-	    <span class="mdl-layout-title">Title</span>
+	    <span class="mdl-layout-title">Stopwatch</span>
 	    <nav class="mdl-navigation">
-	      <a class="mdl-navigation__link" href="">Start/Stop</a>
-	      <a class="mdl-navigation__link" href="">Reset</a>
+	    	<p><a class="mdl-navigation__link">Hours:<span id="hour-value">00</span></a>
+	    		<input class="mdl-slider mdl-js-slider" type="range" id="hour-slider" min="0" max="10" value="0" step="1" onchange="hourChanged(this.value)">
+	    	</p>
+		  	<p><a class="mdl-navigation__link">Minutes:<span id="minute-value">00</span></a>
+	    		<input class="mdl-slider mdl-js-slider" type="range" id="minute-slider" min="0" max="59" value="0" step="1" onchange="minuteChanged(this.value)">
+	    	</p>
 	    </nav>
 	  </div>
 	  <main class="mdl-layout__content">
@@ -65,5 +69,16 @@
 	<script src="build/react-dom.min.js"></script>
 	<script src="build/browser.min.js"></script>
 	<script type="text/babel" src="stopwatch.js"></script>
+	<script type="text/javascript">
+		var hour = document.getElementById('hour-value'),
+			minute = document.getElementById('minute-value');
+
+		var hourChanged = function(val) {
+			hour.innerHTML = (val < 10)?('0'+val):val;
+		};
+		var minuteChanged = function(val) {
+			minute.innerHTML = (val < 10)?('0'+val):val;
+		};
+	</script>
 </body>
 </html>

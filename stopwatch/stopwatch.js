@@ -28,8 +28,8 @@
 			getInitialState: function() {
 				return {
 					running: false,
-					hours: 0,
-					minutes: 0,
+					hours: parseInt(document.getElementById('hour-value').innerHTML),
+					minutes: parseInt(document.getElementById('minute-value').innerHTML),
 					seconds: 0,
 					milliseconds: 0,
 					intervalRunner: null,
@@ -38,20 +38,27 @@
 			reset: function() {
 				this.setState({
 					running: false,
-					milliseconds: 0,
+					hours: parseInt(document.getElementById('hour-value').innerHTML),
+					minutes: parseInt(document.getElementById('minute-value').innerHTML),
 					seconds: 0,
-					minutes: 0,
-					hours: 0,
+					milliseconds: 0,
 				});
 				clearInterval(this.state.intervalRunner);
 				this.props.hourDOM.innerHTML = '00';
 				this.props.minuteDOM.innerHTML = '00';
 				this.props.secondDOM.innerHTML = '00';
 				this.props.millisecondDOM.innerHTML = '00';
+				document.getElementById('hour-value').innerHTML = '00';
+				document.getElementById('minute-value').innerHTML = '00';
+				document.getElementById('hour-slider').value = 0;
+				document.getElementById('minute-slider').value = 0;
 			},
+
 			toggle: function() {
 				this.setState({
 					running: !this.state.running,
+					hours: parseInt(document.getElementById('hour-value').innerHTML),
+					minutes: parseInt(document.getElementById('minute-value').innerHTML),
 				}, function() {
 					if(this.state.running === false) {
 						clearInterval(this.state.intervalRunner);
